@@ -1,5 +1,4 @@
-@extends('admin.master')
-@section('header')
+<div class="top_nav">
  <div class="nav_menu">
             <nav>
               <div class="nav toggle">
@@ -92,4 +91,4 @@
               </ul>
             </nav>
           </div>
-@endsection
+</div>
