@@ -15,7 +15,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-user"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">All Users</a></li>
+                      <li><a href="{{ url('users') }}">All Users</a></li>
                       <li><a href="index2.html">Add User</a></li>
                     </ul>
                   </li>

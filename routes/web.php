@@ -14,7 +14,7 @@ use App\User;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin', function (){
+Route::get('abc', function () {
     return view('admin.master');
 });
 
@@ -30,3 +30,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 
 Route::resource('admin/users','AdminUsersController');
+// Route::get('users','AdminUsersController@ShowUsers');

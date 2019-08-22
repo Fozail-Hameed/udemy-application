@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Role;
 
 class AdminUsersController extends Controller
 {
@@ -11,9 +13,23 @@ class AdminUsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function ShowUsers(){
+    //     $users = User::all();
+    //     echo "<pre>"; print_r($users[0]); echo "</pre>";
+    //     exit();
+        
+    //     return view('admin.users.index',compact('users'));
+    // }
+
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::all();
+        // $role_id = $users[0]['role_id'];
+        $roles =Role::all();
+        $user_roles = $roles[0];
+        // echo "<pre>"; print_r($user_roles); echo "</pre>";
+        // exit();
+        return view('admin.users.index',compact('users'));
     }
 
     /**
