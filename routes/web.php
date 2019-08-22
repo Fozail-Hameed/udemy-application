@@ -14,6 +14,10 @@ use App\User;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('admin', function (){
+    return view('admin.master');
+});
+
 
 Auth::routes();
 
