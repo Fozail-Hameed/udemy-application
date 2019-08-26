@@ -26,23 +26,44 @@
                         <tr>
                           <th>Name</th>
                           <th>Email</th>
+                          <th>Role</th>
+                          <th>Status</th>
                           <th>Joining Date</th>
                         </tr>
                       </thead>
-                      @foreach ($users as $users)
                       <tbody>
-                    @if($users !=null)
+
+                @if($users !==null)
+
+                    @foreach ($users as $users)
                         <tr>
                           <td>{{ $users->name }}</td>
                           <td>{{ $users->email }}</td>
-                          <td>{{ $users->created_at }}</td>
+                          <td>{{ $users->role->name }}</td>
+
+                @if($users->is_active == '1')
+
+                        <?php
+                           $userIsActive = "Active";
+                        ?>
+
+                          <td>{{ $userIsActive }}</td>
+
+                    @else
+                        <?php
+                           $userNActive = "Not Active";
+                        ?>
+
+
+                          <td>{{ $userNActive }}</td>
+                  @endif
+                          <td>{{ $users->created_at->format('d/m/Y') }}</td>
                         </tr>
-                    @endif
-                        @endforeach
-                        
+                     @endforeach
+                @endif
+
                       </tbody>
                     </table>
-
                   </div>
                 </div>
               </div>

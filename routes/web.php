@@ -11,10 +11,13 @@ use App\User;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('admin/login', function () {
+    return view('admin.login.login');
 });
-Route::get('abc', function () {
+Route::get('dashbord', function () {
     return view('admin.master');
 });
 
@@ -28,6 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     echo "<pre>"; print_r($user_role->role['name']); echo "</pre>";
 //     exit();
 // });
-
+Route::post('Log_in','AdminUsersController@LogIn');
+Route::get('logout','AdminUsersController@LogOut');
 Route::resource('admin/users','AdminUsersController');
 // Route::get('users','AdminUsersController@ShowUsers');

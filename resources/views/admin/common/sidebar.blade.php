@@ -1,7 +1,7 @@
 <div class="clearfix"></div>
  <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="../admin/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="{{ asset('admin/images/img.jpg') }}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -15,8 +15,8 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-user"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url('users') }}">All Users</a></li>
-                      <li><a href="index2.html">Add User</a></li>
+                      <li><a href="{{ url('admin/users') }}">All Users</a></li>
+                      <li><a href="{{ url('admin/users/create') }}">Add User</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Posts <span class="fa fa-chevron-down"></span></a>
