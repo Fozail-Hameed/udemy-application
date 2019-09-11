@@ -5,12 +5,19 @@
               <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
-
+              {{--   @if($users !==null)
+                @foreach ($users as $user)
+                @endforeach
+            @endif --}}
               <ul class="nav navbar-nav navbar-right">
+
                 <li class="">
+
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ asset('admin/images/img.jpg') }}" alt="">
-                    <span class=" fa fa-angle-down"></span>
+
+
+                    <img src="{{ asset('uploads/Profile/'. Auth::user()->photo) }}" alt="">
+                    
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>

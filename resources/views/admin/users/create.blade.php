@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('create')
 <div class="row">
+
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
@@ -31,14 +32,14 @@
                     @endif
 
                     <br />
-                    <form method="POST" action="{{ url('admin/users') }}" data-parsley-validate class="form-horizontal form-label-left">
+                    <form method="POST" action="{{ url('admin/users') }}" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
                         @csrf
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" placeholder="Mr.John">
                         </div>
                       </div>
                       <div class="form-group">
@@ -46,7 +47,7 @@
                             Email <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="mail" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12" placeholder="john@gmail.com">
                         </div>
                       </div>
                       <div class="form-group">
@@ -54,7 +55,7 @@
                             Password <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="passwod" name="password" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="password" id="passwod" name="password" required="required" class="form-control col-md-7 col-xs-12" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group">
@@ -94,6 +95,30 @@
                          </select>
                         </div>
                       </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Picture">
+                            Upload Pictutre <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="file" id="file" name="cimage" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Picture">
+                            Joining Date <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class='input-group date' id='myDatepicker'>
+                          <input type="date" required="required" class="form-control col-md-7 col-xs-12" placeholder="25/06/2019" name="date">
+                          <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        </div>
+                      </div>
+
+                      
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -108,4 +133,5 @@
                 </div>
               </div>
             </div>
+
     @endsection

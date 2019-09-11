@@ -18,7 +18,8 @@ Route::get('admin/login', function () {
     return view('admin.login.login');
 });
 Route::get('dashbord', function () {
-    return view('admin.master');
+     $users = User::orderBy('id', 'DESC')->get();
+    return view('admin.master',compact('users'));
 });
 
 
@@ -31,7 +32,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     echo "<pre>"; print_r($user_role->role['name']); echo "</pre>";
 //     exit();
 // });
-Route::post('Log_in','AdminUsersController@LogIn');
+Route::group(['middleware'=> 'admin'], function(){
+
+    Route::post('Log_in','AdminUsersController@LogIn');
 Route::get('logout','AdminUsersController@LogOut');
 Route::resource('admin/users','AdminUsersController');
+Route::post('admin/users/update/{id}','AdminUsersController@update');
+Route::get('admin/users/delete/{id}','AdminUsersController@delete');
+
+            // Post Routes
+Route::resource('admin/posts','AdminPostsController');
+Route::post('admin/posts/update/{id}','AdminPostsController@update');
+Route::get('admin/posts/delete/{id}','AdminPostsController@destroy');
+
+
+
+});
+
 // Route::get('users','AdminUsersController@ShowUsers');

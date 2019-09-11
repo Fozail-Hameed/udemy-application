@@ -1,11 +1,16 @@
 <div class="clearfix"></div>
  <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{ asset('admin/images/img.jpg') }}" alt="..." class="img-circle profile_img">
+                <img src="{{ asset('uploads/Profile/'. Auth::user()->photo) }}" alt="..." class="img-circle profile_img">
               </div>
+            @if($users !==null)
+                @foreach ($users as $user)
+                @endforeach
+            @endif
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>Ahsan</h2>
+                <span>Welcome</span>
+                <h2>{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</h2>
+
               </div>
             </div>
             <br />
@@ -21,8 +26,8 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Posts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">All Posts</a></li>
-                      <li><a href="form_advanced.html">Add Posts</a></li>
+                      <li><a href="{{ url('admin/posts') }}">All Posts</a></li>
+                      <li><a href="{{ url('admin/posts/create') }}">Add Posts</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Categories <span class="fa fa-chevron-down"></span></a>

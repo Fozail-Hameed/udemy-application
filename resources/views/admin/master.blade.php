@@ -27,6 +27,7 @@
 
 	<!-- Custom Theme Style -->
 	<link href="{{ asset('admin/build/css/custom.min.css') }}" rel="stylesheet">
+
   </head>
 
  <body class="nav-md">
@@ -38,7 +39,7 @@
 			  <a href="{{ url('dashbord') }}" class="site_title"><i class="fa fa-paw"></i> <span>Dashbord</span></a>
 			</div>
 
-
+   
 		   <!-- sidebar menu -->
 			@include('admin.common.sidebar')
 			<!-- /sidebar menu -->
@@ -59,6 +60,7 @@
 		<div class="right_col" role="main">
 		@yield('content')
 		@yield('create')
+        @yield('edit')
 		</div>
 		<!-- /page content -->
 
@@ -109,6 +111,7 @@
 
 	<!-- Custom Theme Scripts -->
 	<script src="{{ asset('admin/build/js/custom.min.js') }}"></script>
+    
 
   </body>
 </html>
